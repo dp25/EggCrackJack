@@ -1,0 +1,9 @@
+class Main{
+    function void main() {
+        var EggGame game;
+        let game = EggGame.new();
+        do game.run();
+        do game.dispose();
+        return;
+        }
+}
