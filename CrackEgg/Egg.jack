@@ -5,7 +5,7 @@ class Egg {
     constructor Egg new(int x, int y){
         let eggX = x;
         let eggY = y;
-        do drawEgg(30);
+        do drawEgg();
         return this;
     }
 
@@ -15,26 +15,80 @@ class Egg {
         return;
     }
 
-    method void drawEgg(int location) {
-        var int memAddress;
-        let memAddress = 16384 + location;
-	    do Memory.poke(memAddress+0, 0);
-	    do Memory.poke(memAddress+32, 992);
-	    do Memory.poke(memAddress+64, 1040);
-	    do Memory.poke(memAddress+96, 2056);
-	    do Memory.poke(memAddress+128, 4100);
-	    do Memory.poke(memAddress+160, 4100);
-	    do Memory.poke(memAddress+192, 8194);
-	    do Memory.poke(memAddress+224, 8194);
-	    do Memory.poke(memAddress+256, 16385);
-	    do Memory.poke(memAddress+288, 16385);
-	    do Memory.poke(memAddress+320, 16385);
-	    do Memory.poke(memAddress+352, 16385);
-	    do Memory.poke(memAddress+384, 8194);
-	    do Memory.poke(memAddress+416, 4100);
-	    do Memory.poke(memAddress+448, 2056);
-	    do Memory.poke(memAddress+480, 2032);
-	    return;
+    //method void drawEgg(int location) {
+    //    var int memAddress;
+    //    let memAddress = 16384 + location;
+	//    do Memory.poke(memAddress+0, -1);
+	//    do Memory.poke(memAddress+32, 992);
+	//    do Memory.poke(memAddress+64, 1040);
+	//    do Memory.poke(memAddress+96, 2056);
+	//    do Memory.poke(memAddress+128, 4100);
+	//    do Memory.poke(memAddress+160, 4100);
+	//    do Memory.poke(memAddress+192, 8194);
+	//    do Memory.poke(memAddress+224, 8194);
+	//    do Memory.poke(memAddress+256, 16385);
+	//    do Memory.poke(memAddress+288, 16385);
+	//    do Memory.poke(memAddress+320, 16385);
+	//    do Memory.poke(memAddress+352, 16385);
+	//    do Memory.poke(memAddress+384, 8194);
+	//    do Memory.poke(memAddress+416, 4100);
+	//    do Memory.poke(memAddress+448, 2056);
+	//    do Memory.poke(memAddress+480, 2032);
+	//    return;
+    //}
+
+    method void drawEgg() {
+
+        //let memAddress = 16384 + location;
+        do Screen.setColor(true);
+	    do Screen.drawRectangle(214, 20, 241, 23); //top 8 squeres
+        // left side of the egg
+	    //do Screen.drawRectangle(214,20,217,23); //left1
+	    do Screen.drawRectangle(210,24,213,27); //left2
+	    do Screen.drawRectangle(206,28,209,31); //left3
+	    do Screen.drawRectangle(202,32,205,35); //left4
+	    do Screen.drawRectangle(198,36,201,43); //left5
+	    do Screen.drawRectangle(194,44,197,51); //left6
+	    do Screen.drawRectangle(190,52,193,59); //left7
+	    do Screen.drawRectangle(186,60,189,71); //left8
+	    do Screen.drawRectangle(182,72,185,95); //left9
+	    do Screen.drawRectangle(186,96,189,99); //left10
+	    do Screen.drawRectangle(190,100,193,103); //left11
+	    do Screen.drawRectangle(194,104,201,107); //left12
+	    do Screen.drawRectangle(198,108,205,111); //left13
+	    // right side of the egg`
+        do Screen.drawRectangle(242,20,245,23); //right1
+	    do Screen.drawRectangle(246,24,249,27); //right2
+	    do Screen.drawRectangle(250,28,253,31); //right3
+	    do Screen.drawRectangle(254,32,257,35); //right4
+	    do Screen.drawRectangle(258,36,261,43); //right5
+	    do Screen.drawRectangle(262,44,265,51); //right6
+	    do Screen.drawRectangle(266,52,269,59); //right7
+	    do Screen.drawRectangle(270,60,273,71); //right8
+	    do Screen.drawRectangle(274,72,277,95); //right9
+	    do Screen.drawRectangle(270,96,273,99); //right10
+	    do Screen.drawRectangle(266,100,269,103); //right11
+	    do Screen.drawRectangle(258,104,265,107); //right12
+	    do Screen.drawRectangle(254,108,261,111); //right13
+
+        // Bottom line 
+	    do Screen.drawRectangle(206,112,253,115); 
+
+	    //do Screen.drawRectangle(,,,);
+	    //do Screen.drawRectangle(,,,);
+	    //do Screen.drawRectangle(,,,);
+	    //do Screen.drawRectangle(,,,);
+	    //do Screen.drawRectangle(,,,);
+	    //do Screen.drawRectangle(,,,);
+	    //do Screen.drawRectangle(,,,);
+	    //do Screen.drawRectangle(,,,);
+	    //do Screen.drawRectangle(,,,);
+	    //do Screen.drawRectangle(,,,);
+	    //do Screen.drawRectangle(,,,);
+	    //do Screen.drawRectangle(,,,);
+	    //do Screen.drawRectangle(,,,);
+	    //do Screen.drawRectangle(,,,);
+        return;
     }
 
 }
