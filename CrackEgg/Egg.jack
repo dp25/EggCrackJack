@@ -15,79 +15,100 @@ class Egg {
         return;
     }
 
-    //method void drawEgg(int location) {
-    //    var int memAddress;
-    //    let memAddress = 16384 + location;
-	//    do Memory.poke(memAddress+0, -1);
-	//    do Memory.poke(memAddress+32, 992);
-	//    do Memory.poke(memAddress+64, 1040);
-	//    do Memory.poke(memAddress+96, 2056);
-	//    do Memory.poke(memAddress+128, 4100);
-	//    do Memory.poke(memAddress+160, 4100);
-	//    do Memory.poke(memAddress+192, 8194);
-	//    do Memory.poke(memAddress+224, 8194);
-	//    do Memory.poke(memAddress+256, 16385);
-	//    do Memory.poke(memAddress+288, 16385);
-	//    do Memory.poke(memAddress+320, 16385);
-	//    do Memory.poke(memAddress+352, 16385);
-	//    do Memory.poke(memAddress+384, 8194);
-	//    do Memory.poke(memAddress+416, 4100);
-	//    do Memory.poke(memAddress+448, 2056);
-	//    do Memory.poke(memAddress+480, 2032);
-	//    return;
-    //}
+    function void drawCrack1() {
+        var int height;
+        let height = 64;
+        do Screen.drawRectangle(186,80+height,189,83+height); //left9
+        do Screen.drawRectangle(190,76+height,193,79+height); 
+        do Screen.drawRectangle(194,72+height,197,75+height); 
+        do Screen.drawRectangle(198,76+height,201,79+height); 
+        do Screen.drawRectangle(202,80+height,205,83+height); 
+        do Screen.drawRectangle(206,76+height,209,79+height); 
+	
+	    return;
+    }
+
+    function void drawCrack2() {
+        var int height;
+        let height = 64;
+        do Screen.drawRectangle(266,100+height,269,103+height); //right11
+        do Screen.drawRectangle(262,96+height,265,99+height); 
+        do Screen.drawRectangle(258,92+height,261,95+height); 
+        do Screen.drawRectangle(254,96+height,257,99+height); 
+        do Screen.drawRectangle(250,100+height,253,103+height); 
+        do Screen.drawRectangle(246,96+height,249,99+height); 
+	
+	    return;
+    }
+
+    function void drawCrack3() {
+        var int height;
+        let height = 64;
+        do Screen.drawRectangle(262,44+height,265,47+height); //right6
+        do Screen.drawRectangle(262,40+height,265,43+height); 
+        do Screen.drawRectangle(258,36+height,261,39+height); 
+        do Screen.drawRectangle(254,40+height,257,43+height); 
+        do Screen.drawRectangle(250,44+height,253,47+height); 
+        do Screen.drawRectangle(246,40+height,249,43+height); 
+	
+	    return;
+    
+    }
+    function void drawCrack4() {
+        var int height;
+        let height = 64;
+        do Screen.drawRectangle(210,72+height,213,75+height);
+        do Screen.drawRectangle(214,76+height,217,79+height);  
+        do Screen.drawRectangle(218,72+height,221,75+height); 
+
+        do Screen.drawRectangle(242,92+height,245,95+height);
+        do Screen.drawRectangle(238,88+height,241,91+height);
+
+        do Screen.drawRectangle(242,44+height,245,47+height); 
+        do Screen.drawRectangle(238,48+height,241,51+height); 
+
+
+	    return;
+    }
 
     method void drawEgg() {
 
         //let memAddress = 16384 + location;
+        var int height;
+        let height = 64;
         do Screen.setColor(true);
-	    do Screen.drawRectangle(214, 20, 241, 23); //top 8 squeres
+	    do Screen.drawRectangle(214, 20+height, 241, 23+height); //top 8 squeres
         // left side of the egg
 	    //do Screen.drawRectangle(214,20,217,23); //left1
-	    do Screen.drawRectangle(210,24,213,27); //left2
-	    do Screen.drawRectangle(206,28,209,31); //left3
-	    do Screen.drawRectangle(202,32,205,35); //left4
-	    do Screen.drawRectangle(198,36,201,43); //left5
-	    do Screen.drawRectangle(194,44,197,51); //left6
-	    do Screen.drawRectangle(190,52,193,59); //left7
-	    do Screen.drawRectangle(186,60,189,71); //left8
-	    do Screen.drawRectangle(182,72,185,95); //left9
-	    do Screen.drawRectangle(186,96,189,99); //left10
-	    do Screen.drawRectangle(190,100,193,103); //left11
-	    do Screen.drawRectangle(194,104,201,107); //left12
-	    do Screen.drawRectangle(198,108,205,111); //left13
-	    // right side of the egg`
-        do Screen.drawRectangle(242,20,245,23); //right1
-	    do Screen.drawRectangle(246,24,249,27); //right2
-	    do Screen.drawRectangle(250,28,253,31); //right3
-	    do Screen.drawRectangle(254,32,257,35); //right4
-	    do Screen.drawRectangle(258,36,261,43); //right5
-	    do Screen.drawRectangle(262,44,265,51); //right6
-	    do Screen.drawRectangle(266,52,269,59); //right7
-	    do Screen.drawRectangle(270,60,273,71); //right8
-	    do Screen.drawRectangle(274,72,277,95); //right9
-	    do Screen.drawRectangle(270,96,273,99); //right10
-	    do Screen.drawRectangle(266,100,269,103); //right11
-	    do Screen.drawRectangle(258,104,265,107); //right12
-	    do Screen.drawRectangle(254,108,261,111); //right13
+	    do Screen.drawRectangle(210,24+height,213,27+height); //left2
+	    do Screen.drawRectangle(206,28+height,209,31+height); //left3
+	    do Screen.drawRectangle(202,32+height,205,35+height); //left4
+	    do Screen.drawRectangle(198,36+height,201,43+height); //left5
+	    do Screen.drawRectangle(194,44+height,197,51+height); //left6
+	    do Screen.drawRectangle(190,52+height,193,59+height); //left7
+	    do Screen.drawRectangle(186,60+height,189,71+height); //left8
+	    do Screen.drawRectangle(182,72+height,185,95+height); //left9
+	    do Screen.drawRectangle(186,96+height,189,99+height); //left10
+	    do Screen.drawRectangle(190,100+height,193,103+height); //left11
+	    do Screen.drawRectangle(194,104+height,201,107+height); //left12
+	    do Screen.drawRectangle(198,108+height,205,111+height); //left13
+	    // right side of the egg
+        do Screen.drawRectangle(242,20+height,245,23+height); //right1
+	    do Screen.drawRectangle(246,24+height,249,27+height); //right2
+	    do Screen.drawRectangle(250,28+height,253,31+height); //right3
+	    do Screen.drawRectangle(254,32+height,257,35+height); //right4
+	    do Screen.drawRectangle(258,36+height,261,43+height); //right5
+	    do Screen.drawRectangle(262,44+height,265,51+height); //right6
+	    do Screen.drawRectangle(266,52+height,269,59+height); //right7
+	    do Screen.drawRectangle(270,60+height,273,71+height); //right8
+	    do Screen.drawRectangle(274,72+height,277,95+height); //right9
+	    do Screen.drawRectangle(270,96+height,273,99+height); //right10
+	    do Screen.drawRectangle(266,100+height,269,103+height); //right11
+	    do Screen.drawRectangle(258,104+height,265,107+height); //right12
+	    do Screen.drawRectangle(254,108+height,261,111+height); //right13
 
         // Bottom line 
-	    do Screen.drawRectangle(206,112,253,115); 
-
-	    //do Screen.drawRectangle(,,,);
-	    //do Screen.drawRectangle(,,,);
-	    //do Screen.drawRectangle(,,,);
-	    //do Screen.drawRectangle(,,,);
-	    //do Screen.drawRectangle(,,,);
-	    //do Screen.drawRectangle(,,,);
-	    //do Screen.drawRectangle(,,,);
-	    //do Screen.drawRectangle(,,,);
-	    //do Screen.drawRectangle(,,,);
-	    //do Screen.drawRectangle(,,,);
-	    //do Screen.drawRectangle(,,,);
-	    //do Screen.drawRectangle(,,,);
-	    //do Screen.drawRectangle(,,,);
-	    //do Screen.drawRectangle(,,,);
+	    do Screen.drawRectangle(206,112+height,253,115+height); 
         return;
     }
 

@@ -1,8 +1,14 @@
 class EggGame{
     field Egg egg;
+    field int score;
 
     constructor EggGame new() {
         let egg = Egg.new(0, 0);
+        let score = 0;
+
+        //do Output.moveCursor(0, 25);
+        do Output.printString("SCORE: ");
+		do Output.printInt(score);
         return this;
     }
 
@@ -28,7 +34,13 @@ class EggGame{
             if (key = 81)  { let exit = true; }     // q key
             //if (key = 90)  { do square.decSize(); } // z key
             //if (key = 88)  { do square.incSize(); } // x key
-            //if (key = 129) { let direction = 1; }   // back space
+            if (key = 129) { let score = score + 1; }   // back space
+            do Output.moveCursor(0,7);
+            do Output.printInt(score);
+            if (score = 5) { do Egg.drawCrack1(); }
+            if (score = 10) { do Egg.drawCrack2(); }
+            if (score = 20) { do Egg.drawCrack3(); }
+            if (score = 30) { do Egg.drawCrack4(); }
   
             // waits for the key to be released
             while (~(key = 0)) {
