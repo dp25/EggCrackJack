@@ -54,6 +54,7 @@ class Egg {
 	    return;
     
     }
+
     function void drawCrack4() {
         var int height;
         let height = 64;
@@ -66,8 +67,23 @@ class Egg {
 
         do Screen.drawRectangle(242,44+height,245,47+height); 
         do Screen.drawRectangle(238,48+height,241,51+height); 
+	    return;
+    }
 
+    function void drawCrack5() {
+        var int height;
+        let height = 64;
+        do Screen.drawRectangle(222,68+height,225,71+height);
+        do Screen.drawRectangle(226,64+height,229,67+height);  
+        do Screen.drawRectangle(230,60+height,233,63+height); 
 
+        do Screen.drawRectangle(234,84+height,237,87+height);
+        do Screen.drawRectangle(230,80+height,233,83+height);
+        do Screen.drawRectangle(226,76+height,229,79+height);
+        do Screen.drawRectangle(222,72+height,225,75+height);
+
+        do Screen.drawRectangle(234,52+height,237,55+height); 
+        do Screen.drawRectangle(230,56+height,233,59+height); 
 	    return;
     }
 
@@ -75,8 +91,91 @@ class Egg {
 
         //let memAddress = 16384 + location;
         var int height;
+        var int memAddress; 
         let height = 64;
-        do Screen.setColor(true);
+	    let memAddress = 16384+7;
+	    do Memory.poke(memAddress, -1);
+	    do Memory.poke(memAddress +32, -1);
+	    do Memory.poke(memAddress +64, -1);
+	    do Memory.poke(memAddress +96, -1);
+	    do Memory.poke(memAddress +128, 15);
+	    do Memory.poke(memAddress +160, 15);
+	    do Memory.poke(memAddress +192, 15);
+	    do Memory.poke(memAddress +224, 15);
+	    do Memory.poke(memAddress +256, 15);
+	    do Memory.poke(memAddress +288, 15);
+	    do Memory.poke(memAddress +320, 15);
+	    do Memory.poke(memAddress +352, 15);
+	    do Memory.poke(memAddress +384, 511);
+	    do Memory.poke(memAddress +416, 511);
+	    do Memory.poke(memAddress +448, 511);
+	    do Memory.poke(memAddress +480, 511);
+	    do Memory.poke(memAddress +512, 15);
+	    do Memory.poke(memAddress +544, 15);
+	    do Memory.poke(memAddress +576, 15);
+	    do Memory.poke(memAddress +608, 15);
+	    do Memory.poke(memAddress +640, 15);
+	    do Memory.poke(memAddress +672, 15);
+	    do Memory.poke(memAddress +704, 15);
+	    do Memory.poke(memAddress +736, 15);
+	    do Memory.poke(memAddress +768, -1);
+	    do Memory.poke(memAddress +800, -1);
+	    do Memory.poke(memAddress +832, -1);
+	    do Memory.poke(memAddress +864, -1);
+	    // column 1
+	    do Memory.poke(memAddress +385, -16);
+	    do Memory.poke(memAddress +417, -16);
+	    do Memory.poke(memAddress +449, -16);
+	    do Memory.poke(memAddress +481, -16);
+	    do Memory.poke(memAddress +513, 240);
+	    do Memory.poke(memAddress +545, 240);
+	    do Memory.poke(memAddress +577, 240);
+	    do Memory.poke(memAddress +609, 240);
+	    do Memory.poke(memAddress +641, 240);
+	    do Memory.poke(memAddress +673, 240);
+	    do Memory.poke(memAddress +705, 240);
+	    do Memory.poke(memAddress +737, 240);
+	    do Memory.poke(memAddress +769, -16);
+	    do Memory.poke(memAddress +801, -16);
+	    do Memory.poke(memAddress +833, -16);
+	    do Memory.poke(memAddress +865, -16);
+	    do Memory.poke(memAddress +1025, 240);
+	    do Memory.poke(memAddress +1057, 240);
+	    do Memory.poke(memAddress +1089, 240);
+	    do Memory.poke(memAddress +1121, 240);
+	    do Memory.poke(memAddress +1153, -16);
+	    do Memory.poke(memAddress +1185, -16);
+	    do Memory.poke(memAddress +1217, -16);
+	    do Memory.poke(memAddress +1249, -16);
+	    // column 2
+	    do Memory.poke(memAddress +386, 15);
+	    do Memory.poke(memAddress +418, 15);
+	    do Memory.poke(memAddress +450, 15);
+	    do Memory.poke(memAddress +482, 15);
+	    do Memory.poke(memAddress +514, 15);
+	    do Memory.poke(memAddress +546, 15);
+	    do Memory.poke(memAddress +578, 15);
+	    do Memory.poke(memAddress +610, 15);
+	    do Memory.poke(memAddress +642, 15);
+	    do Memory.poke(memAddress +674, 15);
+	    do Memory.poke(memAddress +706, 15);
+	    do Memory.poke(memAddress +738, 15);
+	    do Memory.poke(memAddress +770, 15);
+	    do Memory.poke(memAddress +802, 15);
+	    do Memory.poke(memAddress +834, 15);
+	    do Memory.poke(memAddress +866, 15);
+	    do Memory.poke(memAddress +898, 15);
+	    do Memory.poke(memAddress +930, 15);
+	    do Memory.poke(memAddress +962, 15);
+	    do Memory.poke(memAddress +994, 15);
+	    do Memory.poke(memAddress +1026, 15);
+	    do Memory.poke(memAddress +1058, 15);
+	    do Memory.poke(memAddress +1090, 15);
+	    do Memory.poke(memAddress +1122, 15);
+	    do Memory.poke(memAddress +1154, 15);
+	    do Memory.poke(memAddress +1186, 15);
+	    do Memory.poke(memAddress +1218, 15);
+	    do Memory.poke(memAddress +1250, 15);
 	    do Screen.drawRectangle(214, 20+height, 241, 23+height); //top 8 squeres
         // left side of the egg
 	    //do Screen.drawRectangle(214,20,217,23); //left1
@@ -111,5 +210,81 @@ class Egg {
 	    do Screen.drawRectangle(206,112+height,253,115+height); 
         return;
     }
+
+    function void drawVictory() {
+
+        var int height; 
+        let height = 64;
+
+		// clear the screen from the egg, while keeping the score
+		do Screen.setColor(false);
+		do Screen.drawRectangle(180,80,511,250);
+
+		// draw the fried egg
+		do Screen.setColor(true);
+
+		//draw the top
+		do Screen.drawRectangle(214, 20, 221, 23); 
+
+		//draw the right part
+		do Screen.drawRectangle(222, 24, 225, 31); //right1
+		do Screen.drawRectangle(226, 32, 233, 35); //right2
+		do Screen.drawRectangle(234, 36, 237, 43); //right3
+		do Screen.drawRectangle(238, 44, 241, 51); //right4
+		do Screen.drawRectangle(242, 52, 253, 55); //right5
+		do Screen.drawRectangle(254, 56, 261, 59); //right6
+		do Screen.drawRectangle(262, 60, 265, 71); //right7
+		do Screen.drawRectangle(266, 72, 269, 83); //right8 most right
+		do Screen.drawRectangle(262, 84, 265, 95); //right9
+		do Screen.drawRectangle(254, 96, 261, 99); //right10
+		do Screen.drawRectangle(250, 100, 253, 107); //right11
+		do Screen.drawRectangle(242, 108, 249, 111); //right12
+		do Screen.drawRectangle(234, 112, 241, 115); //right13
+		
+		// draw the bottow line
+		do Screen.drawRectangle(194, 116, 233, 119);
+	
+		// draw the left part
+		do Screen.drawRectangle(202, 24, 213, 27); // left1
+		do Screen.drawRectangle(186, 28, 201, 31); // left2
+		do Screen.drawRectangle(178, 32, 185, 35); // left3
+		do Screen.drawRectangle(166, 36, 177, 39); // left4 
+		do Screen.drawRectangle(162, 40, 165, 55); // left5 most left top
+		do Screen.drawRectangle(166, 56, 169, 63); // left6
+		do Screen.drawRectangle(170, 64, 173, 71); // left7
+		do Screen.drawRectangle(166, 72, 169, 79); // left8
+		do Screen.drawRectangle(162, 80, 165, 91); // left9 most left bottom
+		do Screen.drawRectangle(166, 92, 169, 99); // left10
+		do Screen.drawRectangle(170, 100, 173, 103); // left11
+		do Screen.drawRectangle(174, 104, 177, 107); // left12
+		do Screen.drawRectangle(178, 108, 185, 111); // left13
+		do Screen.drawRectangle(186, 112, 193, 115); // left14
+
+		// draw the inner egg
+		do Screen.drawRectangle(190, 68, 233, 103); // vig black rectangle
+
+		// draw white parts in the rectangle
+		do Screen.setColor(false);
+		// left-top corner
+		do Screen.drawRectangle(190, 68, 197, 71);
+		do Screen.drawRectangle(190, 72, 193, 75);
+		// left-bottom corner
+		do Screen.drawRectangle(190, 100, 197, 103);	
+		do Screen.drawRectangle(190, 96, 193, 99);
+		// right-top corner
+		do Screen.drawRectangle(226, 68, 233, 71);
+		do Screen.drawRectangle(230, 72, 233, 75);
+		// left-bottom corner	
+		do Screen.drawRectangle(226, 100, 233, 103);
+		do Screen.drawRectangle(230, 96, 233, 99);
+		// inner scrummbles 
+		do Screen.drawRectangle(198, 76, 205, 79);
+		do Screen.drawRectangle(202, 80, 209, 83);
+
+		do Screen.drawRectangle(214, 88, 225, 91);
+		do Screen.drawRectangle(218, 84, 229, 87);
+		return;
+
+	}
 
 }

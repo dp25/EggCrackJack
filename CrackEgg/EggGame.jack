@@ -1,14 +1,29 @@
 class EggGame{
     field Egg egg;
     field int score;
+    field int steps1; 
+    field int steps2;
+    field int steps3;
+    field int steps4;
+    field int steps5;
 
     constructor EggGame new() {
         let egg = Egg.new(0, 0);
         let score = 0;
 
-        //do Output.moveCursor(0, 25);
         do Output.printString("SCORE: ");
 		do Output.printInt(score);
+
+        let steps1 = Random.randRange(30);
+        let steps2 = Random.randRange(70);
+        let steps3 = Random.randRange(120);
+        let steps4 = Random.randRange(150);
+        let steps5 = Random.randRange(250);
+        while (steps2 < steps1) { let steps2 = Random.randRange(70); }
+        while (steps3 < steps2) { let steps3 = Random.randRange(120); }
+        while (steps4 < steps3) { let steps4 = Random.randRange(150); }
+        while (steps5 < steps4) { let steps5 = Random.randRange(250); }
+
         return this;
     }
 
@@ -32,15 +47,17 @@ class EggGame{
                 //do moveSquare();
             }
             if (key = 81)  { let exit = true; }     // q key
-            //if (key = 90)  { do square.decSize(); } // z key
-            //if (key = 88)  { do square.incSize(); } // x key
             if (key = 129) { let score = score + 1; }   // back space
             do Output.moveCursor(0,7);
             do Output.printInt(score);
-            if (score = 5) { do Egg.drawCrack1(); }
-            if (score = 10) { do Egg.drawCrack2(); }
-            if (score = 20) { do Egg.drawCrack3(); }
-            if (score = 30) { do Egg.drawCrack4(); }
+            if (score = steps1) { do Egg.drawCrack1(); }
+            if (score = steps2) { do Egg.drawCrack2(); }
+            if (score = steps3) { do Egg.drawCrack3(); }
+            if (score = steps4) { do Egg.drawCrack4(); }
+            if (score = steps5) { 
+                do Egg.drawCrack5(); 
+                do Egg.drawVictory();
+                }
   
             // waits for the key to be released
             while (~(key = 0)) {
