@@ -1,5 +1,6 @@
 class EggGame{
     field Egg egg;
+    field int bestScore;
     field int score;
     field int steps1; 
     field int steps2;
@@ -13,6 +14,10 @@ class EggGame{
 
         do Output.printString("SCORE: ");
 		do Output.printInt(score);
+        do Output.moveCursor(0,54);
+        do Output.printString("Q to quit");
+        do Output.moveCursor(19,17);
+        do Output.printString("Press backspace to CRACK!");
 
         let steps1 = Random.randRange(30);
         let steps2 = Random.randRange(70);
@@ -37,27 +42,64 @@ class EggGame{
       /** Runs the game: handles the user's inputs and moves the egg accordingly */
     method void run() {
         var char key;  // the key currently pressed by the user
+        var int i;
         var boolean exit;
         let exit = false;
+        let i=0;
         
         while (~exit) {
             // waits for a key to be pressed
             while (key = 0) {
                 let key = Keyboard.keyPressed();
-                //do moveSquare();
             }
+
             if (key = 81)  { let exit = true; }     // q key
-            if (key = 129) { let score = score + 1; }   // back space
-            do Output.moveCursor(0,7);
-            do Output.printInt(score);
-            if (score = steps1) { do Egg.drawCrack1(); }
-            if (score = steps2) { do Egg.drawCrack2(); }
-            if (score = steps3) { do Egg.drawCrack3(); }
-            if (score = steps4) { do Egg.drawCrack4(); }
-            if (score = steps5) { 
-                do Egg.drawCrack5(); 
-                do Egg.drawVictory();
+            if (score<steps5) {
+                // back space
+                if (key = 129) {
+                    do Output.moveCursor(19,17);
+                    do Output.printString("                              ");
+                    let score = score + 1; 
+                }   
+                do Output.moveCursor(0,7);
+                do Output.printInt(score);
+                if (score = steps1) { 
+                    do Egg.drawCrack1();
+                    do Output.moveCursor(19,25);
+                    do Output.printString("CRACK!");
+                    do Sys.wait(500);
                 }
+                if (score = steps2) { 
+                    do Egg.drawCrack2();
+                    do Output.moveCursor(19,25);
+                    do Output.printString("CRACK!"); 
+                    do Sys.wait(500);
+                }
+                if (score = steps3) { 
+                    do Egg.drawCrack3(); 
+                    do Output.moveCursor(19,25);
+                    do Output.printString("CRACK!");
+                    do Sys.wait(500);
+                }
+                if (score = steps4) { 
+                    do Egg.drawCrack4(); 
+                    do Output.moveCursor(19,25);
+                    do Output.printString("CRACK!");
+                    do Sys.wait(500);
+                }
+                if (score = steps5) { 
+                    do Egg.drawCrack5(); 
+                    do Sys.wait(1000);
+                    do Egg.drawVictory();
+                    do Output.moveCursor(19,22);
+                    do Output.printString("What a CRACK?!!!!");
+                    do Output.moveCursor(21,20);
+                    do Output.printString("Your score is: ");
+                    do Output.moveCursor(21,35);
+                    do Output.printInt(score);
+
+                }
+            }
   
             // waits for the key to be released
             while (~(key = 0)) {
